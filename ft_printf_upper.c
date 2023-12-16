@@ -6,7 +6,7 @@
 /*   By: namalier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:20:14 by namalier          #+#    #+#             */
-/*   Updated: 2023/12/16 21:10:43 by namalier         ###   ########.fr       */
+/*   Updated: 2023/12/16 21:36:44 by namalier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_putupper(long n, int count, int baselen, char *base)
 	else
 	{
 		count = ft_putupper(n / baselen, count, baselen, base);
-		return(ft_putupper(n % baselen, count, baselen, base));
+		return (ft_putupper(n % baselen, count, baselen, base));
 	}
 	return (count);
 }
@@ -34,7 +34,7 @@ int	ft_putupper(long n, int count, int baselen, char *base)
 int	ft_putmem(unsigned long n, int count, unsigned long baselen, int bol)
 {
 	char	*base;
-	
+
 	base = "0123456789abcdef";
 	if (!n)
 		return (write(1, "(nil)", 5));
@@ -45,8 +45,7 @@ int	ft_putmem(unsigned long n, int count, unsigned long baselen, int bol)
 	else
 	{
 		count = ft_putnb(n / baselen, count, baselen, 0);
-		return(ft_putnb(n % baselen, count, baselen, 0));
+		return (ft_putnb(n % baselen, count, baselen, 0));
 	}
 	return (count);
 }
-
