@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_lasts.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namalier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 16:48:55 by namalier          #+#    #+#             */
-/*   Updated: 2023/12/15 20:15:14 by namalier         ###   ########.fr       */
+/*   Created: 2023/11/14 15:41:54 by namalier          #+#    #+#             */
+/*   Updated: 2023/11/22 11:23:30 by namalier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_baselen(char *base)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int i;
+	t_list	*tmp;
 
-	i = 0;
-	while (base[i])
-		i++;
-	return (i);
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	ft_lstlast(tmp)->next = new;
 }
