@@ -35,6 +35,8 @@ int	ft_string(char *str)
 	return (count);
 }
 
+//bol is useless, only needed in putmem which is another function. i can then del bol and send char*base so i can suppr upper function and lines where i define if baselen = 10 or 16
+
 int	ft_putnb(long n, int count, int baselen, int bol)
 {
 	char	*base;
